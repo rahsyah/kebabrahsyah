@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sejarah Kebab: Dari Persia hingga Dunia</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pelajari sejarah dan asal-usul makanan kebab dari Persia hingga dunia modern. Temukan nilai budaya, variasi, dan evolusi kebab yang menarik.">
+    <meta name="keywords" content="sejarah kebab, asal-usul kebab, kebab Persia, kebab Turki, variasi kebab, nilai sejarah kebab">
+    <meta name="author" content="Kebab Rahsyah">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://example.com/sejarah-kebab">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,26 +19,39 @@
             background-color: #f4f4f4;
             color: #333;
             text-align: justify;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         header {
             background-color: #d2691e;
             color: white;
             text-align: center;
             padding: 20px;
+            animation: slideDown 1s ease-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         nav {
             background-color: #a0522d;
             padding: 10px;
             text-align: center;
+            animation: fadeIn 1.5s ease-in;
         }
         nav a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #ffd700;
+            transform: scale(1.1);
         }
         .container {
             max-width: 800px;
@@ -41,16 +60,26 @@
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: slideUp 1.2s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         h1, h2 {
             color: #d2691e;
-            text-align: left; /* Judul tetap rata kiri untuk estetika */
+            text-align: left;
+            animation: fadeIn 1.5s ease-in;
         }
         img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
             margin: 10px 0;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
         }
         footer {
             text-align: center;
@@ -58,6 +87,7 @@
             background-color: #d2691e;
             color: white;
             margin-top: 20px;
+            animation: fadeIn 2s ease-in;
         }
     </style>
 </head>
@@ -79,7 +109,7 @@
         <section id="pengantar">
             <h2>Pengantar</h2>
             <p>Kebab adalah salah satu hidangan paling populer di dunia, dikenal dengan daging yang dipanggang atau dibakar yang disajikan dengan roti atau nasi. Namun, tahukah Anda bahwa kebab memiliki sejarah panjang yang berasal dari Timur Tengah? Mari kita jelajahi asal-usulnya yang menarik!</p>
-            <img src="https://example.com/kebab-image.jpg" alt="Ilustrasi Kebab Tradisional" /> <!-- Ganti dengan URL gambar kebab yang sesuai -->
+            <img src="https://example.com/kebab-image.jpg" alt="Ilustrasi Kebab Tradisional" />
         </section>
 
         <section id="asal-usul">
@@ -92,7 +122,7 @@
             <h2>Perkembangan dan Penyebaran</h2>
             <p>Pada abad ke-16, kebab mulai dikenal di Eropa melalui perdagangan dan migrasi. Para pedagang Ottoman membawa kebab ke wilayah Balkan dan Mediterania. Di abad ke-19, dengan munculnya restoran-restoran di Istanbul, kebab menjadi hidangan populer di kalangan masyarakat Turki.</p>
             <p>Peristiwa besar lainnya adalah migrasi orang Turki ke Eropa pada abad ke-20, yang membawa doner kebab ke Jerman dan negara-negara Barat. Hari ini, kebab telah berevolusi menjadi hidangan global, dengan variasi seperti kebab Yunani, kebab India (seekh kebab), dan bahkan kebab vegetarian.</p>
-            <img src="https://example.com/kebab-variations.jpg" alt="Variasi Kebab dari Berbagai Negara" /> <!-- Ganti dengan URL gambar variasi kebab -->
+            <img src="https://example.com/kebab-variations.jpg" alt="Variasi Kebab dari Berbagai Negara" />
         </section>
 
         <section id="variasi">
