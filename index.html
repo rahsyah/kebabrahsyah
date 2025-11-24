@@ -3,107 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rasyah Kebab Persia – Sejak 1978, Api Kami Menyala untukmu</title>
+    <title>Rahsyah Kebab Persia | Kebab Asli Persia Sejak 1978 Jakarta</title>
+    <meta name="description" content="Kebab Persia otentik sejak 1978. Daging marinasi 48 jam, api arang tak pernah padam, roti tandur panas. Rumah kedua bagi yang lapar hati. Sabang, Jakarta.">
+    <meta name="keywords" content="kebab persia jakarta, kebab asli, kebab sabang, sajad kebab, kebab halal, kebab shiraz, makanan timur tengah jakarta">
+    <meta name="author" content="Sajad Kebab Persia">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Sajad Kebab Persia – Sejak 1978, Api Kami Menyala Untukmu">
+    <meta property="og:description" content="Kebab Persia otentik dengan api arang sejak 1978. Buka tiap hari 17.00–03.00 di Sabang, Jakarta.">
+    <meta property="og:image" content="https://sajadkebab.com/images/og-image.jpg">
+    <meta property="og:url" content="https://sajadkebab.com">
+    <meta property="og:type" content="restaurant">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sajad Kebab Persia – Kebab Asli Sejak 1978">
+    <meta name="twitter:description" content="Api arang tak pernah padam selama 47 tahun. Kebab yang bukan cuma makanan, tapi rumah.">
+    <meta name="twitter:image" content="https://sajadkebab.com/images/og-image.jpg">
+
+    <!-- Schema.org Restaurant -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Sajad Kebab Persia",
+      "image": "https://sajadkebab.com/images/sajad-outlet.jpg",
+      "telephone": "+62 21 3190 7878",
+      "email": "halo@sajadkebab.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. H. Agus Salim No. 28, Sabang",
+        "addressLocality": "Menteng",
+        "addressRegion": "Jakarta Pusat",
+        "postalCode": "10350",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -6.1895,
+        "longitude": 106.8302
+      },
+      "url": "https://sajadkebab.com",
+      "priceRange": "Rp 35.000 - Rp 75.000",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "17:00",
+          "closes": "03:00"
+        }
+      ],
+      "servesCuisine": ["Persian", "Middle Eastern", "Halal"],
+      "foundingDate": "1978"
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;600&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+
     <style>
-        body {font-family: 'Cinzel', serif; background:#0f0a00; color:#f4e8d1; line-height:1.8;}
-        .hero {height:100vh; background:url('api-malam.jpg') center/cover; display:flex; align-items:center; justify-content:center; text-align:center;}
-        .section {padding:120px 10%; max-width:1200px; margin:auto;}
-        h1 {font-size:4rem; color:#d4af37;}
-        .persian {font-family:'Noto Nastaliq Urdu', serif; font-size:2rem; color:#b8975a;}
+        :root {
+            --gold: #d4af37;
+            --dark: #0f0a00;
+            --cream: #f4e8d1;
+        }
+        * {margin:0; padding:0; box-sizing:border-box;}
+        body {
+            font-family: 'Lora', serif;
+            background: var(--dark);
+            color: var(--cream);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2 {font-family: 'Cinzel', serif; color: var(--gold);}
+        .persian {font-family: 'Noto Nastaliq Urdu', serif; color: #b8975a;}
+
+        /* Animasi */
+        @keyframes fadeInUp {
+            from {opacity:0; transform:translateY(60px);}
+            to {opacity:1; transform:translateY(0);}
+        }
+        @keyframes glow {
+            0%,100% {text-shadow: 0 0 10px #d4af37;}
+            50% {text-shadow: 0 0 30px #d4af37, 0 0 50px #b8975a;}
+        }
+        .animate {opacity:0; animation: fadeInUp 1.2s ease-out forwards;}
+        .glow {animation: glow 3s infinite;}
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1603360944089-3e2328685938?q=80&w=2000&h=1600&fit=crop') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 200px;
+            background: linear-gradient(transparent, var(--dark));
+        }
+
+        /* Section */
+        .section {
+            padding: 140px 10%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .bg-dark {background: #111;}
+        .text-center {text-align:center;}
+
+        img {
+            max-width: 100%;
+            height: auto;
+            loading: lazy;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
     </style>
 </head>
 <body>
 
 <section class="hero">
-    <div>
-        <h1>Rasyah Kebab Persia</h1>
-        <p class="persian">از سال ۱۳۵۷ – از شیراز تا جاکارتا</p>
-        <p style="font-size:1.4rem; margin-top:20px;">Sejak 1978, api kami tak pernah padam.</p>
+    <div class="animate" style="animation-delay:0.5s;">
+        <h1 style="font-size:5rem; margin-bottom:20px;">Sajad Kebab Persia</h1>
+        <p class="persian" style="font-size:3rem; margin:20px 0;">از سال ۱۳۵۷ – از شیراز تا جاکارتا</p>
+        <p style="font-size:1.8rem;" class="glow">Sejak 1978, api kami tak pernah padam.</p>
     </div>
 </section>
 
-<section class="section">
+<section class="section animate" style="animation-delay:0.3s;">
     <h2>Shiraz, 1955</h2>
-    <p>
-        Di sebuah gang kecil di pasar Vakil, Shiraz, seorang anak laki-laki berusia 8 tahun berdiri di depan tungku arang kakeknya.  
-        Nama anak itu Hossein Rasyah.  
-        Setiap malam dia belajar satu hal: kebab bukan daging yang dibakar.  
-        Kebab adalah janji antara api dan hati yang lapar.
+    <p style="font-size:1.3rem; max-width:800px; margin:30px auto;">
+        Di gang kecil pasar Vakil, seorang anak 8 tahun bernama Hossein Sajad belajar dari kakeknya:  
+        <strong>“Kebab bukan daging yang dibakar. Kebab adalah janji antara api dan hati yang lapar.”</strong>
     </p>
+    <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?q=80&w=800" alt="Anak kecil di pasar Vakil Shiraz 1950-an" loading="lazy">
 </section>
 
-<section class="section" style="background:#111;">
+<section class="section bg-dark animate" style="animation-delay:0.4s;">
     <h2>Jakarta, 1978</h2>
-    <p>
-        Tahun 1978, Hossein yang kini berusia 23 tahun mendarat di Soekarno-Hatta dengan hanya dua koper.  
-        Satu koper berisi pakaian. Satu lagi berisi tungku arang kecil, resep neneknya yang ditulis tangan, dan sekarung rempah dari bazaar Tehran.  
-        Di Glodok, dia membuka gerobak sederhana. Namanya ditulis pakai spidol: “Kebab Persia Om Rasyah”.
+    <p style="font-size:1.3rem; max-width:800px; margin:30px auto;">
+        Dengan dua koper dan tungku arang kecil, Hossein mendarat di Jakarta.  
+        Di Glodok ia menyalakan api pertamanya. Malam itu hanya 3 orang yang membeli.  
+        Seminggu kemudian, antrean sudah mengular sampai ke ujung jalan.
     </p>
-    <p>
-        Malam pertama, hanya tiga orang yang membeli.  
-        Malam kedua, sepuluh.  
-        Minggu ketiga, antrean sudah mengular.  
-        Karena orang Jakarta pertama kali merasakan daging yang dimarinasi yogurt Persia 48 jam, dibakar di atas arang yang tak pernah mati, disajikan dengan roti tandur panas dan saus bawang putih yang bikin orang menutup mata saking nikmatnya.
+    <img src="https://images.unsplash.com/photo-1589804089938-1e01b2e8df7f?q=80&w=800" alt="Gerobak kebab jadul Glodok 1980-an" loading="lazy">
+</section>
+
+<section class="section animate" style="animation-delay:0.5s;">
+    <h2 class="text-center">Api yang Tak Pernah Padam Selama 47 Tahun</h2>
+    <p class="text-center" style="font-size:1.4rem; max-width:900px; margin:40px auto;">
+        Bara yang dinyalakan tahun 1978 masih hidup sampai hari ini.<br>
+        Ditambah sedikit arang baru setiap hari — tapi intinya sama.<br>
+        Sama seperti cinta Jakarta kepada kami.
     </p>
 </section>
 
-<section class="section">
-    <h2>Api yang Pindah Tangan, Tapi Tak Pernah Padam</h2>
-    <p>
-        1985 – Anak pertama Hossein lahir di Jakarta. Namanya Reza.  
-        1995 – Gerobak kecil jadi warung 6 x 6 meter di Sabang.  
-        2005 – Reza mengambil alih tungku. Hossein hanya duduk di pojok, tersenyum melihat anak Jakarta memanggilnya “Pak Haji”.  
-        2015 – Cucu pertama lahir. Namanya Arsyad.  
-        2025 – Arsyad yang kini berusia 10 tahun sudah bisa membalik daging dengan tangan kecilnya.
+<section class="section bg-dark text-center" style="padding:180px 10%;">
+    <h1 style="font-size:6rem;" class="glow">Api Kami Tak Pernah Padam</h1>
+    <p style="font-size:2.2rem; margin:50px 0;">
+        Supaya kapan pun kamu datang — capek, patah hati, atau laper jam 2 pagi —<br>
+        ada rumah yang menunggumu.
     </p>
-    <p>
-        Api arang yang dinyalakan tahun 1978 di Glodok itu masih menyala sampai hari ini.  
-        Benar-benar bara yang sama, ditambah sedikit demi sedikit setiap hari, selama 47 tahun.
-    </p>
-</section>
-
-<section class="section" style="background:#0f0a00; color:#d4af37;">
-    <h2>Kenapa Kami Masih Pakai Arang (Bukan Gas)?</h2>
-    <p>
-        Karena gas tidak punya cerita.  
-        Arang punya.  
-        Setiap bara membawa kenangan Shiraz, kenangan malam hujan di Glodok 1980, kenangan kamu yang pertama kali pacaran di sini tahun 2004, kenangan kamu yang abis putus cinta tahun 2017 dan makan sendirian di pojok sambil nangis.
-    </p>
-    <p>
-        Kami tahu kamu bukan cuma lapar perut.  
-        Kamu lapar rumah.
-    </p>
-</section>
-
-<section class="section">
-    <h2>Hari Ini, 2025</h2>
-    <p>
-        Kami masih di tempat yang sama, hanya sedikit lebih besar.  
-        Tungku arang masih di tengah ruangan, terbuka, supaya kamu bisa melihat api yang sama yang dilihat kakekmu dulu.  
-        Daging masih kami marinasi 48 jam.  
-        Roti tandur masih kami bakar satu per satu di depanmu.  
-        Pak Hossein sekarang duduk di kursi kayu tua, jenggotnya sudah putih semua, tapi matanya masih berbinar setiap kali ada pelanggan baru bilang:  
-        “Pak, ini kebab terenak yang pernah saya makan.”
-    </p>
-</section>
-
-<section class="section" style="text-align:center; padding:150px 20px; background:linear-gradient(black, #1a0f00);">
-    <h1 style="font-size:5rem; color:#d4af37;">Api Kami Tak Pernah Padam</h1>
-    <p style="font-size:2rem; margin:40px 0;">Supaya kapan pun kamu datang —  
-    capek, patah hati, bahagia, atau cuma laper jam 2 pagi —  
-    ada rumah yang menunggumu.</p>
-    
-    <p style="margin-top:80px; font-size:1.6rem;">
-        Sajad Kebab Persia<br>
-        Jl. H. Agus Salim No. 28, Sabang, Jakarta<br>
-        Buka setiap hari 17.00 – 03.00<br>
-        Sejak 1978
-    </p>
-    
-    <p class="persian" style="margin-top:60px; font-size:3rem; color:#b8975a;">
+    <p class="persian" style="font-size:4rem; margin-top:80px; color:#d4af37;">
         آتش ما هرگز خاموش نمی‌شود
     </p>
 </section>
+
+<section class="section text-center" style="background:linear-gradient(#1a0f00, var(--dark)); padding:120px 10%;">
+    <h2 style="font-size:3rem;">Kunjungi Kami</h2>
+    <p style="font-size:1.6rem; margin:30px 0;">
+        Jl. H. Agus Salim No. 28 (Sabang), Jakarta Pusat<br>
+        Setiap hari 17.00 – 03.00<br>
+        WA: 0811 978 1978
+    </p>
+    <p style="margin-top:50px;">
+        <a href="https://wa.me/628119781978" style="background:var(--gold); color:#000; padding:15px 40px; text-decoration:none; border-radius:50px; font-weight:bold;">Pesan Sekarang via WhatsApp</a>
+    </p>
+</section>
+
+<script>
+    // Simple intersection observer untuk animasi saat scroll
+    const elements = document.querySelectorAll('.animate');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
