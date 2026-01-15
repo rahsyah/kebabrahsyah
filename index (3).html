@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://revenant-three.vercel.app/img/7427.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebab Rahsyah | Kebab Resep Persia </title>
+    <meta name="description" content="Kebab Persia otentik sejak 1978. Daging marinasi 48 jam, api arang tak pernah padam, roti tandur panas. Rumah kedua bagi yang lapar hati. Driyorejo, Gresik.">
+    <meta name="keywords" content="kebab persia Driyorejo, kebab asli, kebab kemlagi, rahsyah kebab, kebab halal, kebab shiraz, makanan timur tengah gresik">
+    <meta name="author" content="Rahsyah Kebab Persia">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Rahsyah Kebab Persia – Sejak 1978, Api Kami Menyala Untukmu">
+    <meta property="og:description" content="Kebab Persia otentik dengan api arang sejak 1978. Buka tiap hari 17.00–03.00 di driyorejo, gresik.">
+    <meta property="og:image" content="https://rahsyahkebab.com/images/og-image.jpg">
+    <meta property="og:url" content="https://rahsyahkebab.com">
+    <meta property="og:type" content="restaurant">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rahsyah Kebab Persia – Kebab Asli Sejak 1978">
+    <meta name="twitter:description" content="Api arang tak pernah padam selama 47 tahun. Kebab yang bukan cuma makanan, tapi rumah.">
+    <meta name="twitter:image" content="https://rahsyahkebab.com/images/og-image.jpg">
+
+    <!-- Schema.org Restaurant -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Rahsyah Kebab Persia",
+      "image": "https://rahsyahkebab.com/images/sajad-outlet.jpg",
+      "telephone": "+62 898 6063 500",
+      "email": "halo@rahsyahkebab.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. De Naila Garden DG5-8, Driyorejo",
+        "addressLocality": "Mojosarirejo",
+        "addressRegion": "Gresik",
+        "postalCode": "61177",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -6.1895,
+        "longitude": 106.8302
+      },
+      "url": "https://rahsyahkebab.com",
+      "priceRange": "Rp 10.000 - Rp 35.000",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "17:00",
+          "closes": "03:00"
+        }
+      ],
+      "servesCuisine": ["Persian", "Middle Eastern", "Halal"],
+      "foundingDate": "1978"
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;600&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark: #0f0a00;
+            --cream: #f4e8d1;
+        }
+        * {margin:0; padding:0; box-sizing:border-box;}
+        body {
+            font-family: 'Lora', serif;
+            background: var(--dark);
+            color: var(--cream);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2 {font-family: 'Cinzel', serif; color: var(--gold);}
+        .persian {font-family: 'Noto Nastaliq Urdu', serif; color: #b8975a;}
+
+        /* Animasi */
+        @keyframes fadeInUp {
+            from {opacity:0; transform:translateY(60px);}
+            to {opacity:1; transform:translateY(0);}
+        }
+        @keyframes glow {
+            0%,100% {text-shadow: 0 0 10px #d4af37;}
+            50% {text-shadow: 0 0 30px #d4af37, 0 0 50px #b8975a;}
+        }
+        .animate {opacity:0; animation: fadeInUp 1.2s ease-out forwards;}
+        .glow {animation: glow 3s infinite;}
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1603360944089-3e2328685938?q=80&w=2000&h=1600&fit=crop') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 200px;
+            background: linear-gradient(transparent, var(--dark));
+        }
+
+        /* Section */
+        .section {
+            padding: 140px 10%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .bg-dark {background: #111;}
+        .text-center {text-align:center;}
+
+        img {
+            max-width: 100%;
+            height: auto;
+            loading: lazy;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="animate" style="animation-delay:0.5s;">
+        <h1 style="font-size:5rem; margin-bottom:20px;">Rahsyah Kebab Persia</h1>
+        <p class="persian" style="font-size:3rem; margin:20px 0;">از سال ۱۳۵۷ – از شیراز تا جاکارتا</p>
+        <p style="font-size:1.8rem;" class="glow">Sejak 1978, api kami tak pernah padam.</p>
+    </div>
+</section>
+
+<section class="section animate" style="animation-delay:0.3s;">
+    <h2>Shiraz, 1955</h2>
+    <p style="font-size:1.3rem; max-width:800px; margin:30px auto;">
+        Di gang kecil pasar Vakil, seorang anak 8 tahun bernama Hossein Rahsyah belajar dari kakeknya:  
+        <strong>“Kebab bukan daging yang dibakar. Kebab adalah janji antara api dan hati yang lapar.”</strong>
+    </p>
+    <img src="https://raw.githubusercontent.com/rahsyah/kebabrahsyah/refs/heads/main/img/pasar%20iran.jpg" alt="Anak kecil di pasar Vakil Shiraz 1950-an" loading="lazy">
+</section>
+
+<section class="section bg-dark animate" style="animation-delay:0.4s;">
+    <h2>Gresik, 1978</h2>
+    <p style="font-size:1.3rem; max-width:800px; margin:30px auto;">
+        Dengan dua koper dan tungku arang kecil, Hossein mendarat di Giri.  
+        Di Gresik ia menyalakan api pertamanya. Malam itu hanya 3 orang yang membeli.  
+        Seminggu kemudian, antrean sudah mengular sampai ke ujung jalan.
+    </p>
+    <img src="https://raw.githubusercontent.com/rahsyah/kebabrahsyah/refs/heads/main/img/Lucid_Origin_artistic_portrait_photography_of_With_two_suitcas_0.jpg" alt="Gerobak kebab jadul Glodok 1980-an" loading="lazy">
+</section>
+
+<section class="section animate" style="animation-delay:0.5s;">
+    <h2 class="text-center">Api yang Tak Pernah Padam Selama 47 Tahun</h2>
+    <p class="text-center" style="font-size:1.4rem; max-width:900px; margin:40px auto;">
+        Bara yang dinyalakan tahun 1978 masih hidup sampai hari ini.<br>
+        Ditambah sedikit arang baru setiap hari — tapi intinya sama.<br>
+        Sama seperti cinta Gresik kepada kami.
+    </p>
+</section>
+
+<section class="section bg-dark text-center" style="padding:180px 10%;">
+    <h1 style="font-size:6rem;" class="glow">Api Kami Tak Pernah Padam</h1>
+    <p style="font-size:2.2rem; margin:50px 0;">
+        Supaya kapan pun kamu lapar, mager, patah hati saat malam hari —<br>
+        tak perlu repot nyalakan api.
+    </p>
+    <p class="persian" style="font-size:4rem; margin-top:80px; color:#d4af37;">
+        آتش ما هرگز خاموش نمی‌شود
+    </p>
+</section>
+
+<section class="section text-center" style="background:linear-gradient(#1a0f00, var(--dark)); padding:120px 10%;">
+    <h2 style="font-size:3rem;">Kunjungi Kami</h2>
+    <p style="font-size:1.6rem; margin:30px 0;">
+        Jl. De Naila Garden DG5-8, Driyorejo, Gresik<br>
+        Jl. Perempatan PandanKrajan No. 2, Kemlagi, Mojokerto<br>
+        WA: +62 898-6063-500
+    </p>
+    <p style="margin-top:50px;">
+        <a href="https://kebabrahsyah.vercel.app/Menu.html" style="background:var(--gold); color:#000; padding:15px 40px; text-decoration:none; border-radius:50px; font-weight:bold;">Menu Kami</a>
+    </p>
+</section>
+
+<script>
+    // Simple intersection observer untuk animasi saat scroll
+    const elements = document.querySelectorAll('.animate');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
