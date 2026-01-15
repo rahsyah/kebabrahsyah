@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="https://revenant-three.vercel.app/img/7427.png" type="image/png">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KEBAB RAHSYAH - Gasss Kuey!</title>
+    <title>KEBAB RAHSYAH - Gasss Kuy!</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;800&display=swap');
 
@@ -473,14 +474,157 @@
             z-index: 1;
         }
 
-        /* Responsive */
+        /* Responsive - Mobile Vertical Layout */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 4rem; }
-            .problem-grid, .features-grid, .stats-grid, .testimonial-grid {
-                grid-template-columns: 1fr;
+            .hero h1 { 
+                font-size: 3.5rem; 
+                letter-spacing: 5px;
             }
-            .ingredient { font-size: 4rem; }
-            .kebab-final { font-size: 8rem; }
+            
+            .hero-tagline {
+                font-size: 1.3rem;
+                letter-spacing: 2px;
+            }
+            
+            .hero-emoji {
+                font-size: 6rem;
+            }
+            
+            .cta-btn {
+                padding: 15px 40px;
+                font-size: 1.2rem;
+            }
+            
+            /* Problem Section - Vertical Stack */
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .problem h2 {
+                font-size: 3rem;
+            }
+            
+            .problem-card {
+                padding: 30px;
+            }
+            
+            /* Solution Section - Vertical */
+            .solution h2 {
+                font-size: 3.5rem;
+            }
+            
+            .ingredients-container {
+                height: 400px;
+            }
+            
+            .ingredient { 
+                font-size: 3rem; 
+            }
+            
+            .ingredient.explode:nth-child(1) { transform: translate(-80px, -100px) scale(1) rotate(360deg); }
+            .ingredient.explode:nth-child(2) { transform: translate(80px, -100px) scale(1) rotate(-360deg); }
+            .ingredient.explode:nth-child(3) { transform: translate(-100px, 50px) scale(1) rotate(180deg); }
+            .ingredient.explode:nth-child(4) { transform: translate(100px, 50px) scale(1) rotate(-180deg); }
+            .ingredient.explode:nth-child(5) { transform: translate(0, -120px) scale(1) rotate(270deg); }
+            
+            .kebab-final { 
+                font-size: 6rem; 
+            }
+            
+            /* Features - Vertical Grid */
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .feature-badge {
+                padding: 20px;
+                font-size: 1rem;
+            }
+            
+            /* Stats Section - Vertical Stack */
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 5rem;
+            }
+            
+            .stat-label {
+                font-size: 1.2rem;
+            }
+            
+            /* Testimonials - Vertical Stack */
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .testimonial-card {
+                padding: 30px;
+            }
+            
+            .testimonials h2 {
+                font-size: 3rem;
+            }
+            
+            .quote-mark {
+                font-size: 3rem;
+            }
+            
+            /* CTA Final */
+            .cta-final h2 {
+                font-size: 3.5rem;
+            }
+            
+            .cta-final p {
+                font-size: 1.3rem;
+            }
+            
+            .cta-final::before {
+                font-size: 15rem;
+            }
+        }
+        
+        /* Extra Small Mobile */
+        @media (max-width: 480px) {
+            .hero h1 { 
+                font-size: 2.5rem; 
+            }
+            
+            .hero-tagline {
+                font-size: 1rem;
+            }
+            
+            .hero-emoji {
+                font-size: 4rem;
+            }
+            
+            .problem h2,
+            .solution h2,
+            .testimonials h2,
+            .cta-final h2 {
+                font-size: 2.5rem;
+            }
+            
+            .stat-number {
+                font-size: 4rem;
+            }
+            
+            .ingredients-container {
+                height: 300px;
+            }
+            
+            .ingredient {
+                font-size: 2.5rem;
+            }
+            
+            .kebab-final {
+                font-size: 5rem;
+            }
         }
 
         /* Scroll Indicator */
@@ -521,7 +665,7 @@
     <!-- Problem Section -->
     <section class="section problem">
         <div class="problem-content">
-            <h2>MASALAH KAMU KITA TAHU</h2>
+            <h2>MASALAH LU KITA TAU</h2>
             <div class="problem-grid">
                 <div class="problem-card" data-delay="0">
                     <div class="problem-emoji">😤</div>
@@ -610,12 +754,16 @@
 
     <!-- CTA Final -->
     <section class="section cta-final">
-        <h2>LAPER? NGAPAIN MIKIR!</h2>
-        <p>Order sekarang & rasain sensasinya! 🔥</p>
-        <button class="cta-btn" style="background: #ff1744; color: #ffeb3b; border-color: #000;">
-            <a href="https://kebabrahsyah.vercel.app/Menu.html">PESEN SEKARANG! 🌯
-            </a>
-        </button>
+        <div style="position: relative; z-index: 1;">
+            <h2>LAPER? NGAPAIN MIKIR!</h2>
+            <p>Order sekarang & rasain sensasinya! 🔥</p>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <button class="cta-btn" style="background: #ff1744; color: #ffeb3b; border-color: #000;">
+                <a href="https://kebabrahsyah.vercel.app/Menu.html"></a>
+                    PESEN SEKARANG! 🌯
+                </button>
+            </div>
+        </div>
     </section>
 
     <script>
