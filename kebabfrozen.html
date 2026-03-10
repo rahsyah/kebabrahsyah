@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="id">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://revenant-three.vercel.app/img/7429.png" type="image/png">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduan Memasak Kebab Frozen</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --amber: #E8832A;
+    --amber-light: #F5A855;
+    --cream: #FDF6EC;
+    --brown: #5C3317;
+    --brown-light: #8B5E3C;
+    --green: #4A7C59;
+    --red: #C0392B;
+    --warm-white: #FFFBF4;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--warm-white);
+    color: var(--brown);
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #FFF3DC 0%, #FFE8B8 50%, #FFDCA0 100%);
+    padding: 60px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(232,131,42,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(245,168,85,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 5s ease-in-out infinite reverse;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.15); opacity: 1; }
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--amber);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 18px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 8vw, 3.6rem);
+    font-weight: 900;
+    color: var(--brown);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    animation: fadeDown 0.7s ease 0.1s both;
+  }
+
+  .hero-title span {
+    color: var(--amber);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-title span::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 4px;
+    background: var(--amber-light);
+    border-radius: 4px;
+    transform: scaleX(0);
+    animation: underline 0.6s ease 0.8s forwards;
+  }
+
+  @keyframes underline { to { transform: scaleX(1); } }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--brown-light);
+    max-width: 380px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    animation: fadeDown 0.7s ease 0.2s both;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    animation: fadeDown 0.7s ease 0.3s both;
+  }
+
+  .stat {
+    background: white;
+    border-radius: 16px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 20px rgba(92,51,23,0.12);
+    text-align: center;
+    min-width: 90px;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--amber);
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--brown-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* STEPS */
+  .steps-section {
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 700;
+    text-align: center;
+    color: var(--brown);
+    margin-bottom: 48px;
+  }
+
+  .step-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    box-shadow: 0 8px 40px rgba(92,51,23,0.10);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+
+  .step-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .step-card:hover {
+    box-shadow: 0 16px 60px rgba(92,51,23,0.18);
+    transform: translateY(-4px);
+  }
+
+  .step-card:nth-child(1) { transition-delay: 0.0s; }
+  .step-card:nth-child(2) { transition-delay: 0.1s; }
+  .step-card:nth-child(3) { transition-delay: 0.2s; }
+  .step-card:nth-child(4) { transition-delay: 0.3s; }
+  .step-card:nth-child(5) { transition-delay: 0.4s; }
+
+  .step-image-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .step-image-wrap img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .step-card:hover .step-image-wrap img {
+    transform: scale(1.05);
+  }
+
+  .step-number-badge {
+    position: absolute;
+    top: 16px; left: 16px;
+    width: 44px; height: 44px;
+    background: var(--amber);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(232,131,42,0.5);
+    z-index: 2;
+  }
+
+  .step-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(92,51,23,0.35) 0%, transparent 50%);
+  }
+
+  .step-body {
+    padding: 22px 24px 26px;
+  }
+
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+
+  .step-desc {
+    font-size: 0.92rem;
+    color: var(--brown-light);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .step-tips {
+    background: linear-gradient(135deg, #FFF8EE, #FFF3DC);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 10px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tip-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tip-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--brown);
+    line-height: 1.5;
+  }
+
+  /* CONNECTOR LINE */
+  .step-connector {
+    width: 3px;
+    height: 28px;
+    background: linear-gradient(to bottom, var(--amber), var(--amber-light));
+    margin: 0 auto -4px;
+    border-radius: 4px;
+    opacity: 0.4;
+  }
+
+  /* TIPS SECTION */
+  .tips-section {
+    background: linear-gradient(135deg, var(--brown) 0%, #3D2010 100%);
+    padding: 60px 20px;
+    color: white;
+  }
+
+  .tips-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .tips-section .section-label { color: var(--amber-light); }
+  .tips-section .section-title { color: white; margin-bottom: 32px; }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 380px) {
+    .tips-grid { grid-template-columns: 1fr; }
+  }
+
+  .tip-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 20px 18px;
+    backdrop-filter: blur(8px);
+    transition: background 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
+  }
+
+  .tip-card.visible { opacity: 1; transform: translateY(0); }
+  .tip-card:nth-child(1) { transition-delay: 0s; }
+  .tip-card:nth-child(2) { transition-delay: 0.1s; }
+  .tip-card:nth-child(3) { transition-delay: 0.2s; }
+  .tip-card:nth-child(4) { transition-delay: 0.3s; }
+
+  .tip-card:hover {
+    background: rgba(255,255,255,0.14);
+    transform: translateY(-3px);
+  }
+
+  .tip-card-icon { font-size: 2rem; margin-bottom: 10px; }
+  .tip-card-title {
+    font-weight: 800;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: var(--amber-light);
+  }
+  .tip-card-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.55;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--cream);
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .footer-emoji { font-size: 2.5rem; margin-bottom: 10px; display: block; animation: bounce 2s ease infinite; }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .footer-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--brown);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .footer-sub {
+    font-size: 0.85rem;
+    color: var(--brown-light);
+  }
+
+  /* FLOATING SCROLL HINT */
+  .scroll-hint {
+    position: absolute;
+    bottom: 28px; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: fadeDown 1s ease 1.2s both;
+  }
+
+  .scroll-hint span {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brown-light);
+  }
+
+  .scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 3px solid var(--amber);
+    border-bottom: 3px solid var(--amber);
+    transform: rotate(45deg);
+    animation: arrowBounce 1.4s ease-in-out infinite;
+  }
+
+  @keyframes arrowBounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(5px); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">🌯 Panduan Memasak</div>
+  <h1 class="hero-title">Kebab Frozen<br><span>Siap Saji</span></h1>
+  <p class="hero-sub">Ikuti langkah mudah ini untuk mendapatkan kebab yang renyah di luar, gurih di dalam — sempurna setiap saat!</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Langkah</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">25<span style="font-size:1rem">min</span></div>
+      <div class="stat-label">Total Waktu</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">😋</div>
+      <div class="stat-label">Hasil</div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps-section">
+  <p class="section-label">Step by Step</p>
+  <h2 class="section-title">Cara Memasaknya</h2>
+
+  <!-- Step 1 -->
+  <div class="step-card">
+    <div class="step-image-wrap">
+      <img src="/mnt/user-data/uploads/kebab_1.png" alt="Thawing kebab frozen">
+      <div class="step-overlay"></div>
+      <div class="step-number-badge">1</div>
+    </div>
+    <div class="step-body">
+      <h3 class="step-title">Cairkan Kebab (Thawing)</h3>
+      <p class="step-desc">Keluarkan kebab frozen dari freezer dan biarkan pada suhu ruang selama <strong>10–15 menit</strong> hingga setengah mencair. Jangan memasak dalam keadaan masih beku penuh — ini kunci agar bagian dalam matang sempurna!</p>
+      <div class="step-tips">
+        <span class="tip-icon">⏱️</span>
+        <span class="tip-text">Waktu thawing: 10–15 menit di suhu ruang. Jangan gunakan microwave agar tekstur tetap baik.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-connector"></div>
+
+  <!-- Step 2 -->
+  <div class="step-card">
+    <div class="step-image-wrap">
+      <img src="/mnt/user-data/uploads/kebab_2.png" alt="Lepas plastik wrap">
+      <div class="step-overlay"></div>
+      <div class="step-number-badge">2</div>
+    </div>
+    <div class="step-body">
+      <h3 class="step-title">Lepas Plastik Pembungkus</h3>
+      <p class="step-desc">Dengan tangan bersih (gunakan sarung tangan jika perlu), lepaskan plastik wrap dari kebab secara perlahan. Pastikan seluruh plastik terlepas sebelum dimasak.</p>
+      <div class="step-tips">
+        <span class="tip-icon">🧤</span>
+        <span class="tip-text">Gunakan sarung tangan bersih untuk menjaga higienitas dan kemudahan membuka bungkus.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-connector"></div>
+
+  <!-- Step 3 -->
+  <div class="step-card">
+    <div class="step-image-wrap">
+      <img src="/mnt/user-data/uploads/kebab_3.png" alt="Goreng di wajan">
+      <div class="step-overlay"></div>
+      <div class="step-number-badge">3</div>
+    </div>
+    <div class="step-body">
+      <h3 class="step-title">Panaskan Minyak & Masukkan Kebab</h3>
+      <p class="step-desc">Panaskan minyak goreng secukupnya di wajan dengan api <strong>sedang</strong>. Setelah minyak panas, masukkan kebab satu per satu menggunakan penjepit. Jangan memasukkan terlalu banyak sekaligus agar matang merata.</p>
+      <div class="step-tips">
+        <span class="tip-icon">🔥</span>
+        <span class="tip-text">Gunakan api sedang. Minyak terlalu panas akan membuat kulit gosong sebelum isian panas.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-connector"></div>
+
+  <!-- Step 4 -->
+  <div class="step-card">
+    <div class="step-image-wrap">
+      <img src="/mnt/user-data/uploads/kebab_4.png" alt="Balik kebab hingga kecokelatan">
+      <div class="step-overlay"></div>
+      <div class="step-number-badge">4</div>
+    </div>
+    <div class="step-body">
+      <h3 class="step-title">Goreng Hingga Keemasan</h3>
+      <p class="step-desc">Goreng kebab sambil sesekali dibalik menggunakan penjepit selama <strong>3–5 menit</strong> hingga seluruh permukaan berwarna cokelat keemasan dan renyah. Perhatikan percikan minyak — gunakan penjepit panjang untuk keamanan.</p>
+      <div class="step-tips">
+        <span class="tip-icon">🍳</span>
+        <span class="tip-text">Balik kebab setiap 1–2 menit agar matang merata di semua sisi tanpa gosong.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-connector"></div>
+
+  <!-- Step 5 -->
+  <div class="step-card">
+    <div class="step-image-wrap">
+      <img src="/mnt/user-data/uploads/kebab_5.png" alt="Sajikan kebab">
+      <div class="step-overlay"></div>
+      <div class="step-number-badge">5</div>
+    </div>
+    <div class="step-body">
+      <h3 class="step-title">Sajikan & Nikmati! 🎉</h3>
+      <p class="step-desc">Angkat kebab dan tiriskan sejenak. Sajikan bersama <strong>selada segar, tomat iris</strong>, dan saus favorit kamu. Kebab siap dinikmati selagi hangat dan renyah!</p>
+      <div class="step-tips">
+        <span class="tip-icon">🌿</span>
+        <span class="tip-text">Sajikan segera setelah dimasak. Tambahkan saus sambal, mayones, atau garlic sauce untuk cita rasa terbaik!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-section">
+  <div class="tips-inner">
+    <p class="section-label">Pro Tips</p>
+    <h2 class="section-title">Tips Sukses Memasak</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-card-icon">❄️</div>
+        <div class="tip-card-title">Thawing Dulu</div>
+        <div class="tip-card-desc">Selalu cairkan kebab 10–15 menit sebelum dimasak agar bagian dalam matang sempurna.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">🌡️</div>
+        <div class="tip-card-title">Api Sedang</div>
+        <div class="tip-card-desc">Hindari api terlalu besar. Api sedang menghasilkan kulit renyah tanpa gosong.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">🫙</div>
+        <div class="tip-card-title">Minyak Cukup</div>
+        <div class="tip-card-desc">Gunakan minyak yang cukup — tidak perlu banyak, asal seluruh sisi kebab terendam sedikit.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">🥗</div>
+        <div class="tip-card-title">Sajikan Segar</div>
+        <div class="tip-card-desc">Paling enak disantap langsung setelah matang selagi kulit masih crispy dan isian hangat.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-emoji">🌯</span>
+  <p class="footer-text">Selamat Menikmati!</p>
+  <p class="footer-sub">Kebab frozen yang lezat, siap dalam hitungan menit.</p>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.step-card, .tip-card').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
