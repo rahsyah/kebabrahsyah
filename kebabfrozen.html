@@ -360,6 +360,245 @@
     line-height: 1.55;
   }
 
+  /* THANK YOU SECTION */
+  .thankyou-section {
+    padding: 60px 20px 50px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .thankyou-card {
+    background: linear-gradient(135deg, #FFF3DC 0%, #FFE8B8 60%, #FFDCA0 100%);
+    border-radius: 28px;
+    padding: 40px 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 50px rgba(232,131,42,0.18);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .thankyou-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .thankyou-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(232,131,42,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .thankyou-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(245,168,85,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 5s ease-in-out infinite reverse;
+  }
+
+  .thankyou-hearts {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 14px;
+    animation: heartBeat 1.6s ease-in-out infinite;
+  }
+
+  @keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+  }
+
+  .thankyou-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 900;
+    color: var(--brown);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .thankyou-brand em {
+    color: var(--amber);
+    font-style: normal;
+  }
+
+  .thankyou-msg {
+    font-size: 0.95rem;
+    color: var(--brown-light);
+    line-height: 1.7;
+    max-width: 400px;
+    margin: 14px auto 0;
+  }
+
+  .thankyou-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, var(--amber), var(--amber-light));
+    border-radius: 4px;
+    margin: 18px auto 0;
+  }
+
+  /* STORAGE SECTION */
+  .storage-section {
+    padding: 20px 20px 60px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .storage-section .section-label { text-align: center; }
+  .storage-section .section-title { text-align: center; margin-bottom: 28px; }
+
+  .storage-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .storage-card {
+    border-radius: 22px;
+    padding: 20px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.55s ease, transform 0.55s ease, box-shadow 0.3s ease;
+  }
+
+  .storage-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .storage-card:hover {
+    box-shadow: 0 10px 36px rgba(0,0,0,0.11);
+    transform: translateX(4px) !important;
+  }
+
+  .storage-card:nth-child(1) { transition-delay: 0s; }
+  .storage-card:nth-child(2) { transition-delay: 0.13s; }
+  .storage-card:nth-child(3) { transition-delay: 0.26s; }
+
+  .storage-card.room {
+    background: linear-gradient(135deg, #FFF3DC, #FFE8B8);
+    border: 2px solid #F5C97A;
+  }
+  .storage-card.fridge {
+    background: linear-gradient(135deg, #E8F5F0, #C8EDE1);
+    border: 2px solid #7DCBAD;
+  }
+  .storage-card.freezer {
+    background: linear-gradient(135deg, #E0F0FF, #C2DCFF);
+    border: 2px solid #7AB8F5;
+  }
+
+  .storage-icon-wrap {
+    width: 60px; height: 60px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.9rem;
+    flex-shrink: 0;
+  }
+
+  .storage-card.room .storage-icon-wrap    { background: rgba(232,131,42,0.15); }
+  .storage-card.fridge .storage-icon-wrap  { background: rgba(74,124,89,0.15); }
+  .storage-card.freezer .storage-icon-wrap { background: rgba(50,120,220,0.15); }
+
+  .storage-info { flex: 1; min-width: 0; }
+
+  .storage-location {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 2px;
+  }
+
+  .storage-temp {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+  }
+
+  .storage-card.room .storage-temp    { color: #B06010; }
+  .storage-card.fridge .storage-temp  { color: #1E6E50; }
+  .storage-card.freezer .storage-temp { color: #1A5EA8; }
+
+  .storage-note {
+    font-size: 0.8rem;
+    color: var(--brown-light);
+    line-height: 1.45;
+  }
+
+  .storage-duration {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .duration-num {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2.1rem;
+    line-height: 1;
+    display: block;
+  }
+
+  .storage-card.room .duration-num    { color: #B06010; }
+  .storage-card.fridge .duration-num  { color: #1E6E50; }
+  .storage-card.freezer .duration-num { color: #1A5EA8; }
+
+  .duration-unit {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+    display: block;
+  }
+
+  .storage-card.room .duration-unit    { color: #B06010; }
+  .storage-card.fridge .duration-unit  { color: #1E6E50; }
+  .storage-card.freezer .duration-unit { color: #1A5EA8; }
+
+  .storage-warning {
+    margin-top: 18px;
+    background: #FFF8EE;
+    border: 1.5px dashed var(--amber);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+  }
+
+  .storage-warning.visible { opacity: 1; transform: translateY(0); }
+
+  .storage-warning-text {
+    font-size: 0.83rem;
+    color: var(--brown);
+    line-height: 1.55;
+  }
+
+  .storage-warning-text strong { color: var(--amber); }
+
   /* FOOTER */
   .footer {
     background: var(--cream);
@@ -547,6 +786,16 @@
   </div>
 </section>
 
+<!-- THANK YOU -->
+<section class="thankyou-section">
+  <div class="thankyou-card">
+    <span class="thankyou-hearts">🧡🌯🧡</span>
+    <h2 class="thankyou-brand">Terima Kasih Telah Memilih<br><em>Homemade Kebab Rahsyah</em></h2>
+    <p class="thankyou-msg">Setiap kebab kami dibuat dengan bahan pilihan dan cinta, khusus untuk kamu. Kepercayaanmu adalah semangat kami untuk terus menyajikan yang terbaik. Selamat menikmati!</p>
+    <div class="thankyou-divider"></div>
+  </div>
+</section>
+
 <!-- TIPS -->
 <section class="tips-section">
   <div class="tips-inner">
@@ -577,6 +826,62 @@
   </div>
 </section>
 
+<!-- STORAGE -->
+<section class="storage-section">
+  <p class="section-label">Panduan Penyimpanan</p>
+  <h2 class="section-title">Simpan dengan Benar 📦</h2>
+
+  <div class="storage-cards">
+
+    <div class="storage-card room">
+      <div class="storage-icon-wrap">🌡️</div>
+      <div class="storage-info">
+        <div class="storage-location">Suhu Ruangan</div>
+        <div class="storage-temp">± 25°C</div>
+        <div class="storage-note">Simpan di tempat sejuk dan kering, jauh dari sinar matahari langsung.</div>
+      </div>
+      <div class="storage-duration">
+        <span class="duration-num">2</span>
+        <span class="duration-unit">Hari</span>
+      </div>
+    </div>
+
+    <div class="storage-card fridge">
+      <div class="storage-icon-wrap">🧊</div>
+      <div class="storage-info">
+        <div class="storage-location">Lemari Es</div>
+        <div class="storage-temp">± 5°C</div>
+        <div class="storage-note">Simpan dalam wadah tertutup rapat di dalam kulkas bagian bawah.</div>
+      </div>
+      <div class="storage-duration">
+        <span class="duration-num">7</span>
+        <span class="duration-unit">Hari</span>
+      </div>
+    </div>
+
+    <div class="storage-card freezer">
+      <div class="storage-icon-wrap">❄️</div>
+      <div class="storage-info">
+        <div class="storage-location">Freezer (Beku)</div>
+        <div class="storage-temp">-18°C</div>
+        <div class="storage-note">Bungkus rapat dengan plastik wrap lalu simpan di freezer untuk ketahanan maksimal.</div>
+      </div>
+      <div class="storage-duration">
+        <span class="duration-num">2</span>
+        <span class="duration-unit">Bulan</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="storage-warning">
+    <span style="font-size:1.2rem;flex-shrink:0">⚠️</span>
+    <p class="storage-warning-text">
+      <strong>Perhatian:</strong> Jangan simpan kembali kebab yang sudah dimasak ke dalam freezer. Pastikan plastik pembungkus belum dibuka sebelum disimpan. Periksa tanggal produksi pada kemasan untuk keamanan terbaik.
+    </p>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <span class="footer-emoji">🌯</span>
@@ -596,7 +901,7 @@
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.step-card, .tip-card').forEach(el => observer.observe(el));
+  document.querySelectorAll('.step-card, .tip-card, .thankyou-card, .storage-card, .storage-warning').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
