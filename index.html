@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>kebabrahsyah | Kebab, Roti Canai, Burger</title>
+<title>KebabRahsyah | Kebab, Roti Canai, Burger</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Galada&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -144,10 +144,15 @@ main{padding-left:max(4%,env(safe-area-inset-left,0px));padding-right:max(4%,env
   .card .mini{width:46px;height:83px;margin-top:-3.8rem}
   #wrap{width:min(40vh,300px)}
 }
+#toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 1.2rem);transform:translate(-50%,20px);
+  z-index:300;max-width:88vw;padding:.8rem 1.3rem;border-radius:100px;background:rgba(0,0,0,.75);color:#fff;
+  font-size:.85rem;text-align:center;opacity:0;pointer-events:none;transition:.35s;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+#toast.show{opacity:1;transform:translate(-50%,0)}
 </style>
 </head>
 <body>
 <div id="steam"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <header>
   <div class="logo">KebabRahsyah</div>
@@ -193,6 +198,15 @@ main{padding-left:max(4%,env(safe-area-inset-left,0px));padding-right:max(4%,env
 
 <script>
 /* Ganti ke gambar/GLB sendiri nanti. Kosong = pakai gambar SVG bawaan. */
+/* Isi dengan link pemesanan (WhatsApp, Google Form, GoFood, dll.) */
+const ORDER_URL='';
+const toastEl=document.getElementById('toast');let toastT;
+function order(){
+  if(ORDER_URL){window.open(ORDER_URL,'_blank','noopener');return}
+  toastEl.textContent='Link pemesanan belum diisi';toastEl.classList.add('show');
+  clearTimeout(toastT);toastT=setTimeout(()=>toastEl.classList.remove('show'),2200);
+}
+document.querySelectorAll('.cta,.contact').forEach(b=>b.addEventListener('click',order));
 const SYM={shawarma:'wrapSvg',kebab:'kebabSvg',burger:'burgerSvg'};
 const SET = {
   shawarma:{toppings:['🍅','🥬','🧅','🥒','🍋','🌿','🍅','🥬','🧅'],theme:{in:'#c2410c',mid:'#7c2d12',out:'#1c0a04'}},
