@@ -96,6 +96,54 @@ h1,h2{font-family:var(--font-h);font-weight:400;font-size:clamp(4rem,10vw,11rem)
   .badge{display:none}
 }
 @media (prefers-reduced-motion:reduce){.puff{display:none}.stage{animation:fadeIn 1s forwards}}
+
+/* ===== Responsif: Android, iPhone, tablet ===== */
+html,body{-webkit-text-size-adjust:100%;touch-action:none}
+@supports (height:100dvh){html,body{height:100dvh}}
+main{padding-left:max(4%,env(safe-area-inset-left,0px));padding-right:max(4%,env(safe-area-inset-right,0px))}
+@media (max-width:1200px){.card{width:112px}.right{width:auto}}
+@media (hover:none){
+  .card:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+  .card.on:hover{border-color:var(--pink)}
+  .card:hover .mini{transform:none}
+  .cta:hover,.contact:hover{transform:none}
+}
+/* HP potret & layar sempit */
+@media (max-width:900px) and (orientation:portrait),(max-width:520px){
+  header{padding:1rem 5%}
+  .logo{font-size:1.35rem}
+  .contact{padding:.65rem 1.1rem;font-size:.8rem}
+  main{flex-direction:column;justify-content:flex-start;
+    padding:4.6rem max(5%,env(safe-area-inset-right,0px)) 1rem max(5%,env(safe-area-inset-left,0px))}
+  .left{height:auto;padding:1rem 0 0;gap:1rem;align-items:center;text-align:center}
+  .right{width:100%;height:auto;margin-top:auto;padding:0;gap:.8rem;flex-direction:column-reverse;
+    justify-content:flex-end;align-items:center;text-align:center}
+  h1 br,h2 br{display:none}
+  .outline::after{content:" ";-webkit-text-stroke:0}
+  h1{font-size:clamp(2.6rem,12.5vw,4.6rem)}
+  h2{font-size:clamp(1.9rem,8.6vw,3.2rem);line-height:1}
+  .side-title{align-self:center;text-align:center}
+  .cards{margin-top:2.2rem;gap:.6rem;justify-content:center;width:100%}
+  .card{width:calc((90vw - 1.2rem)/3);padding:.8rem .4rem;padding-top:3rem;gap:.8rem;border-radius:22px}
+  .card .mini{width:58px;height:104px;margin-top:-5rem}
+  .card span{font-size:.7rem}
+  #wrap{width:min(48vw,27vh)}
+}
+@media (max-height:700px) and (orientation:portrait){h2{display:none}}
+/* HP landscape */
+@media (max-height:520px) and (orientation:landscape){
+  header{padding:.7rem 4%}
+  main{padding-top:3.6rem}
+  .left,.right{padding:.8rem 0}
+  .left{gap:.8rem}
+  h1{font-size:clamp(2.4rem,9vh,3.4rem)}
+  .badge,.desc,h2{display:none}
+  .right{justify-content:center}
+  .cards{margin-top:2rem;gap:.5rem}
+  .card{width:92px;padding:.6rem .4rem;padding-top:2.4rem;gap:.6rem}
+  .card .mini{width:46px;height:83px;margin-top:-3.8rem}
+  #wrap{width:min(40vh,300px)}
+}
 </style>
 </head>
 <body>
@@ -157,22 +205,30 @@ const stage=document.querySelector('.stage'), body=document.body, root=document.
 const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 let switching=false, spin=0;
 
+const K=Math.min(1,Math.max(.55,innerWidth/900));
+const coarse=matchMedia('(pointer:coarse)').matches;
+let lastMove=0;
 const tops=[];
 POS.forEach((p,i)=>{
   const el=document.createElement('div'); el.className='top';
   el.textContent=SET.shawarma.toppings[i];
-  el.style.top=p[0]+'%'; el.style.left=p[1]+'%'; el.style.fontSize=p[2]+'rem';
+  el.style.top=p[0]+'%'; el.style.left=p[1]+'%'; el.style.fontSize=(p[2]*K)+'rem';
   if(i>=6){el.style.opacity=.65; bg.appendChild(el)} else fg.appendChild(el);
   el.dataset.rx=0; el.dataset.ry=0; el.dataset.angle=Math.random()*360; el.dataset.bx=0; el.dataset.by=0;
   tops.push(el);
 });
 
 let mouse={x:0,y:0,px:-999,py:-999}, cur={x:0,y:0};
-addEventListener('pointermove',e=>{mouse.x=e.clientX/innerWidth-.5;mouse.y=e.clientY/innerHeight-.5;mouse.px=e.clientX;mouse.py=e.clientY});
+const track=e=>{lastMove=performance.now();mouse.x=e.clientX/innerWidth-.5;mouse.y=e.clientY/innerHeight-.5;mouse.px=e.clientX;mouse.py=e.clientY};
+addEventListener('pointermove',track);
+addEventListener('pointerdown',track);
+const release=e=>{if(e.pointerType!=='mouse'){mouse.px=-999;mouse.py=-999}};
+addEventListener('pointerup',release);addEventListener('pointercancel',release);
 
 const DUR=[5,7,6,8,5.5,6.5,9,11,10];
 (function loop(){
   const t=Date.now()*.001;
+  if(coarse&&performance.now()-lastMove>1500){mouse.x=Math.sin(t*.7)*.35;mouse.y=Math.cos(t*.5)*.12;mouse.px=-999;mouse.py=-999}
   cur.x+=(mouse.x-cur.x)*.05; cur.y+=(mouse.y-cur.y)*.05;
   wrap.style.transform=`rotate(18deg) rotateY(${cur.x*40+spin}deg) rotateX(${-cur.y*20}deg)`;
   fg.style.transform=`translate(${cur.x*60}px,${cur.y*60}px)`;
