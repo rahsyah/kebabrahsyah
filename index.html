@@ -148,6 +148,7 @@ main{padding-left:max(4%,env(safe-area-inset-left,0px));padding-right:max(4%,env
   z-index:300;max-width:88vw;padding:.8rem 1.3rem;border-radius:100px;background:rgba(0,0,0,.75);color:#fff;
   font-size:.85rem;text-align:center;opacity:0;pointer-events:none;transition:.35s;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 #toast.show{opacity:1;transform:translate(-50%,0)}
+a.contact{display:inline-block;text-decoration:none;font-family:inherit;font-size:.85rem;line-height:1.2}
 </style>
 </head>
 <body>
@@ -156,8 +157,8 @@ main{padding-left:max(4%,env(safe-area-inset-left,0px));padding-right:max(4%,env
 
 <header>
   <div class="logo">KebabRahsyah</div>
-  <nav><a href="#" class="on">Beranda</a><a href="#">Isian</a><a href="#">Saus</a><a href="#">Menu</a><a href="#">Ulasan</a></nav>
-  <button class="contact">Pesan Sekarang</button>
+  <nav><a href="#" class="on">Beranda</a><a href="https://kebabrahsyah.vercel.app/menu.html" target="_blank" rel="noopener noreferrer">Menu</a><a href="https://www.tiktok.com/@dorizky_celmek/video/7515340944070249733" target="_blank" rel="noopener noreferrer">Ulasan</a></nav>
+  <a class="contact" href="https://kebabrahsyah.vercel.app/kenapa.html" target="_blank" rel="noopener noreferrer">Tentang Kami</a>
 </header>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -199,14 +200,14 @@ main{padding-left:max(4%,env(safe-area-inset-left,0px));padding-right:max(4%,env
 <script>
 /* Ganti ke gambar/GLB sendiri nanti. Kosong = pakai gambar SVG bawaan. */
 /* Isi dengan link pemesanan (WhatsApp, Google Form, GoFood, dll.) */
-const ORDER_URL='';
+const ORDER_URL='https://wa.me/628986063500?text='+encodeURIComponent('Halo KebabRahsyah, saya mau pesan');
 const toastEl=document.getElementById('toast');let toastT;
 function order(){
   if(ORDER_URL){window.open(ORDER_URL,'_blank','noopener');return}
   toastEl.textContent='Link pemesanan belum diisi';toastEl.classList.add('show');
   clearTimeout(toastT);toastT=setTimeout(()=>toastEl.classList.remove('show'),2200);
 }
-document.querySelectorAll('.cta,.contact').forEach(b=>b.addEventListener('click',order));
+document.querySelectorAll('.cta').forEach(b=>b.addEventListener('click',order));
 const SYM={shawarma:'wrapSvg',kebab:'kebabSvg',burger:'burgerSvg'};
 const SET = {
   shawarma:{toppings:['🍅','🥬','🧅','🥒','🍋','🌿','🍅','🥬','🧅'],theme:{in:'#c2410c',mid:'#7c2d12',out:'#1c0a04'}},
